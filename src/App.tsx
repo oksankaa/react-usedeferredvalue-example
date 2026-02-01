@@ -1,5 +1,5 @@
-import SearchLag from './components/SearchLag';
-import SearchSmooth from './components/SearchSmooth';
+import SearchLag from './components/SearchLag'
+import SearchSmooth from './components/SearchSmooth'
 
 function App() {
   return (
