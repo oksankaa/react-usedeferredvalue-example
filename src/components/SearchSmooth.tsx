@@ -1,28 +1,28 @@
-import { useCallback, useDeferredValue, useEffect, useState } from 'react';
-import FilteredList from './FilteredList';
-import { locations } from '../data/locations';
-import { slowSyncFilter } from '../utils/slowSyncFilter';
+import { useCallback, useDeferredValue, useEffect, useState } from 'react'
+import FilteredList from './FilteredList'
+import { locations } from '../data/locations'
+import { slowSyncFilter } from '../utils/slowSyncFilter'
 
 export function SearchSmooth() {
-  const [searchValue, setSearchValue] = useState('');
-  const deferredSearchValue = useDeferredValue(searchValue);
-  const [filtered, setFiltered] = useState(locations);
-  const [isLocationSelected, setIsLocationSelected] = useState(false);
+  const [searchValue, setSearchValue] = useState('')
+  const deferredSearchValue = useDeferredValue(searchValue)
+  const [filtered, setFiltered] = useState(locations)
+  const [isLocationSelected, setIsLocationSelected] = useState(false)
 
   useEffect(() => {
-    const result = slowSyncFilter(locations, deferredSearchValue);
-    setFiltered(result);
-  }, [deferredSearchValue]);
+    const result = slowSyncFilter(locations, deferredSearchValue)
+    setFiltered(result)
+  }, [deferredSearchValue])
 
   const handleSelect = useCallback((name: string) => {
-    setSearchValue(name);
-    setIsLocationSelected(true);
-  }, []);
+    setSearchValue(name)
+    setIsLocationSelected(true)
+  }, [])
 
   const handleChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
-    setSearchValue(e.target.value);
-    setIsLocationSelected(false);
-  }, []);
+    setSearchValue(e.target.value)
+    setIsLocationSelected(false)
+  }, [])
 
   return (
     <div className="pb-border">
@@ -42,7 +42,8 @@ export function SearchSmooth() {
         />
       </div>
     </div>
-  );
+  )
 }
 
-export default SearchSmooth;
+export default SearchSmooth
+
