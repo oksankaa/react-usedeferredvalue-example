@@ -1,27 +1,27 @@
-import { useCallback, useEffect, useState } from 'react';
-import FilteredList from './FilteredList';
-import { slowSyncFilter } from '../utils/slowSyncFilter';
-import { locations } from '../data/locations';
+import { useCallback, useEffect, useState } from 'react'
+import FilteredList from './FilteredList'
+import { slowSyncFilter } from '../utils/slowSyncFilter'
+import { locations } from '../data/locations'
 
 export function SearchLag() {
-  const [searchValue, setSearchValue] = useState('');
-  const [filtered, setFiltered] = useState(locations);
-  const [isLocationSelected, setIsLocationSelected] = useState(false);
+  const [searchValue, setSearchValue] = useState('')
+  const [filtered, setFiltered] = useState(locations)
+  const [isLocationSelected, setIsLocationSelected] = useState(false)
 
   useEffect(() => {
-    const result = slowSyncFilter(locations, searchValue);
-    setFiltered(result);
-  }, [searchValue]);
+    const result = slowSyncFilter(locations, searchValue)
+    setFiltered(result)
+  }, [searchValue])
 
   const handleSelect = useCallback((name: string) => {
-    setSearchValue(name);
-    setIsLocationSelected(true);
-  }, []);
+    setSearchValue(name)
+    setIsLocationSelected(true)
+  }, [])
 
   const handleChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
-    setSearchValue(e.target.value);
-    setIsLocationSelected(false);
-  }, []);
+    setSearchValue(e.target.value)
+    setIsLocationSelected(false)
+  }, [])
 
   return (
     <div className="autocomplete">
@@ -39,7 +39,8 @@ export function SearchLag() {
         onSelect={handleSelect}
       />
     </div>
-  );
+  )
 }
 
-export default SearchLag;
+export default SearchLag
+
