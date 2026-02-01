@@ -20,7 +20,7 @@ const FilteredList = memo(function FilteredList({
         {searchValue.trim() !== '' &&
           !isLocationSelected &&
           (filteredLocation.length > 0 ? (
-            filteredLocation.slice(0, 15).map((item) => (
+            filteredLocation.slice(0, 15).map(item => (
               <div
                 key={item.name}
                 className="autocomplete-item"
@@ -38,4 +38,5 @@ const FilteredList = memo(function FilteredList({
 })
 
 export default FilteredList
+
 
