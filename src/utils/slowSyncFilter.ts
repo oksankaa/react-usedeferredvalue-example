@@ -4,6 +4,7 @@ export function slowSyncFilter(
   locations: GeoLocation[],
   searchValue: string
 ): GeoLocation[] {
+  const query = searchValue.toLowerCase()
   return locations.filter((location) => {
     // Simulate extremely slow computation (for demo/testing)
     const now = performance.now();
@@ -11,6 +12,7 @@ export function slowSyncFilter(
       // busy wait
     }
 
-    return location.name.toLowerCase().includes(searchValue.toLowerCase());
+    return location.name.toLowerCase().includes(query);
   });
 }
+
