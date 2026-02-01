@@ -12,7 +12,8 @@ export function slowSyncFilter(
       // busy wait
     }
 
-    return location.name.toLowerCase().includes(query);
+    return location.name.toLowerCase().includes(query)
   });
 }
+
 
