@@ -7,7 +7,7 @@ function App() {
       <SearchLag />
       <SearchSmooth />
     </>
-  );
+  )
 }
 
-export default App;
+export default App
