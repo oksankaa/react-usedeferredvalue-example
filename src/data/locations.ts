@@ -1,6 +1,6 @@
-export type GeoLocation = {
-  name: string;
-};
+export interface GeoLocation {
+  name: string
+}
 
 export const locations: GeoLocation[] = [
   { name: 'Andorra' },
@@ -440,4 +440,5 @@ export const locations: GeoLocation[] = [
   { name: 'Sana’a' },
   { name: 'Lusaka' },
   { name: 'Harare' },
-];
+]
+
