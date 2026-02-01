@@ -1,11 +1,11 @@
-import React, { memo } from 'react';
-import type { GeoLocation } from '../data/locations';
+import React, { memo } from 'react'
+import type { GeoLocation } from '../data/locations'
 
 interface FilteredListProps {
-  filteredLocation: GeoLocation[];
-  searchValue: string;
-  isLocationSelected: boolean;
-  onSelect: (name: string) => void;
+  filteredLocation: GeoLocation[]
+  searchValue: string
+  isLocationSelected: boolean
+  onSelect: (name: string) => void
 }
 
 const FilteredList = memo(function FilteredList({
@@ -34,7 +34,8 @@ const FilteredList = memo(function FilteredList({
           ))}
       </div>
     </>
-  );
-});
+  )
+})
 
-export default FilteredList;
+export default FilteredList
+
